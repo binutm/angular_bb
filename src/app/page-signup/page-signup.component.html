@@ -1,0 +1,117 @@
+﻿
+<br/>
+<br/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4">
+                <h6 style ="color : skyblue">Create an Account with Aptus Api</h6>
+                <br/>
+                <p style ="color : skyblue">With Aptus APIs you can,</p>
+                <ul>
+                        <li><b>Feature 1 </b>: Text here after tag </li>
+                        &nbsp;
+                        <span></span>
+                        <li><b>Feature 2 </b>: Text here after tag</li>
+                        &nbsp;
+                        <li><b>Feature 3 </b>: Text here after tag</li>
+                        &nbsp;
+                        <li><b>Feature 4 </b>: Text here after tag</li>
+                   
+                    </ul>
+    
+          </div>
+          <div class="col-sm-4" style = "position: relative; margin-top: 15px;">
+                
+            <div *ngIf="message_text" [ngClass]="{ 'alert': message_text, 'alert-success': message_type == 'success', 'alert-danger': message_type == 'error' }">{{ message_text }}</div>         
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <br/> <br/>  
+                        
+
+                   
+                       
+                        
+                       
+                       
+                    <div class="form-group">
+                        <label for="name">Name <b style = "color :red">*</b></label>
+                        &nbsp;<small class="text-muted">(Space is allowed)</small>
+                        <input type="text"  placeholder="Enter Name"style=" border-radius : 5px; background-color:#EBEBE4;"formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text"  placeholder="Enter Company Name" style = "background-color:#EBEBE4;" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" />
+                            <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                                <div *ngIf="f.company.errors.required">Company Name is required</div>
+                            </div>
+                        </div>-->
+                        <!-- <div class="form-group">
+                                <label for="email">Email <b style = "color :red">*</b></label>
+                                <input type="text" [textMask]="{mask2: mask}" placeholder="Enter Email" style = "background-color:#EBEBE4;" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                </div>
+                            </div> -->
+                            
+                 
+                    <div class="form-group">
+                        <label for="email">Email <b style = "color :red">*</b></label>
+                        &nbsp;<small class="text-muted">(Proper mail format required)</small>
+                        <input type="email"  placeholder="Enter Email" style = "background-color:#EBEBE4;" email="true" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+
+                            <div *ngIf="f.email.errors.required">Email is Invalid</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <b style = "color :red">*</b></label>
+                        &nbsp;<small class="text-muted">(Must be alphabets and numeric of length 8)</small>
+                        <input type="password" id = "password" placeholder="Enter Password" style = "background-color:#EBEBE4;" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <b style = "color :red">*</b></label>
+                        &nbsp;<small class="text-muted">(Should match as above)</small>
+                        <input type="password" id = "confirm_password" placeholder="Enter Password again" style = "background-color:#EBEBE4;" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"   (keyup)="onKey($event)"  />
+                        
+                        <div *ngIf="passwordMismatch" id = "error">{{ passwordMismatchErrMsg }}</div>
+                        
+                    </div>
+                    
+         
+
+                    <div class="form-group">
+                            <input type="checkbox" [(ngModel)]="checked" [ngModelOptions]="{standalone: true}" id="termsChkbx" name="feature" value="claws" />
+                            &nbsp; &nbsp;
+                         <label for="claws">I agree Terms & Conditions</label>
+                        </div>
+
+                       
+                    <div class="form-group  text-center">
+                        <br/>
+                        <button  id="sub1" [disabled]="!checked" class="btn btn-primary my-small-btn">Sign Up</button>
+                        <!--<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+                       <!--<a [routerLink]="['/login']" class="btn btn-primary">Cancel</a>-->
+                    </div>
+               
+                </form>
+               
+                
+          </div>
+         
+        </div>
+      </div>
+
+<style>
+    .my-small-btn {
+    width: 360px;
+
+}
+</style>
+

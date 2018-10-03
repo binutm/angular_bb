@@ -1,0 +1,90 @@
+{
+	"_id": "srcdestlist",
+	"_etag": {
+		"$oid": "5ad73e804725286f38596919"
+	},
+	"destination": {
+		"mysql": {
+			"name": "MySQL",
+			"logo": "https://i.imgur.com/W5Kzbpg.png"
+		},
+		"sqlserver": {
+			"name": "SQL Server",
+			"logo": "https://i.imgur.com/PYtIpVk.png"
+		},
+		"oracle": {
+			"name": "Oracle",
+			"logo": "https://i.imgur.com/DJ25LE0.png"
+		},
+		"postgresql": {
+			"name": "PostgreSQL",
+			"logo": "https://i.imgur.com/HVrCqBy.png"
+		},
+		"mongodb": {
+			"name": "MongoDB",
+			"logo": "https://i.imgur.com/5AmghPI.png"
+		},
+		"csv": {
+			"name": "CSV",
+			"logo": "https://i.imgur.com/PIHtalQ.png"
+		},
+		"xml": {
+			"name": "XML",
+			"logo": "https://i.imgur.com/dbHpt3Q.png"
+		}
+	},
+	"source": {
+		"dropbox": {
+			"name": "Dropbox",
+			"logo": "https://i.imgur.com/rDh9ixm.png"
+		},
+		"facebook": {
+			"name": "Facebook",
+			"logo": "https://i.imgur.com/gDrWWU4.png"
+		},
+		"instagram": {
+			"name": "Instagram",
+			"logo": "https://i.imgur.com/zoX8VOE.png"
+		},
+		"linkedin": {
+			"name": "LinkedIn",
+			"logo": "https://i.imgur.com/BUaj07e.png"
+		},
+		"mailchimp": {
+			"name": "Mailchimp",
+			"logo": "https://i.imgur.com/u5UJHIX.png"
+		},
+		"salesforce": {
+			"name": "Salesforce",
+			"logo": "https://i.imgur.com/doUMOZv.png"
+		},
+		"shopify": {
+			"name": "Shopify",
+			"logo": "https://i.imgur.com/sHkSxml.png"
+		},
+		"twitter": {
+			"name": "Twitter",
+			"logo": "https://i.imgur.com/xcXYlQk.png"
+		},
+		"youtube": {
+			"name": "Youtube",
+			"logo": "https://i.imgur.com/wkA4FcS.png"
+		},
+		"zohocrm": {
+			"name": "ZohoCRM",
+			"logo": "https://i.imgur.com/7oeIQBt.png"
+		},
+		"zohohelpdesk": {
+			"name": "Zoho Help Desk",
+			"logo": "https://i.imgur.com/LBEL84S.png"
+		},
+		"surveymonkey": {
+			"name": "Survey Monkey",
+			"logo": "http://lh3.googleusercontent.com/XQCrKp885eZvF988gR7gE6qBS1RTUHy6K9pXgWujC9UIE8Vr07yGorYrlYV1qv2o8EY=w300"
+		},
+		"quickbooks": {
+			"name": "QuickBooks",
+			"logo": "https://assets.materialup.com/uploads/20098789-f2dc-4b26-8ac2-4a47a164a025/preview.jpeg"
+		}
+	}
+}

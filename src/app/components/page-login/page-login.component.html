@@ -1,0 +1,107 @@
+<section class="user">
+	<div class="user_options-container">
+		<div class="user_options-text">
+			<div class="user_options-unregistered">
+				<h2 class="user_unregistered-title">Don't have an account?</h2>
+				<p class="user_unregistered-text">Eperience data like never before.</p>
+				<button class="user_unregistered-signup" [routerLink]="['/signup']" id="signup-button">Sign up</button>
+
+			</div>
+
+
+		</div>
+
+		<div class="user_options-forms" id="user_options-forms">
+			<div class="user_forms-login">
+				<h1 class="forms_title">Login</h1>
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<div *ngIf="message_text" [ngClass]="{ 'alert': message_text, 'alert-success': message_type == 'success', 'alert-danger': message_type == 'error' }">{{ message_text }}</div>	
+				<!-- <div class="alert alert-success" *ngIf="submitted && alertService && stat == 0; else emailnotverified">
+						<strong>Success!</strong>
+					</div>
+					<ng-template  #emailnotverified>
+						<div class="alert alert-danger" *ngIf="submitted && stat == 2; else invalid" >
+							<strong>Email not verified !! </strong>
+							</div>
+					</ng-template>
+					<ng-template #invalid>
+
+						<div class="alert alert-danger" *ngIf="submitted && stat == 3; else usernotfound" >
+							<strong>Invalid Credentials !! </strong>
+							</div>
+
+					</ng-template>
+					<ng-template #usernotfound>
+
+						<div class="alert alert-danger" *ngIf="submitted && stat == 4;" >
+							<strong>User not found !! </strong>
+							</div>
+
+					</ng-template> -->
+					<div class="form-group">
+						<label for="email">Email <b style="color :red">*</b></label>
+						<input type="text" placeholder="Enter email" style=" border-radius : 5px; background-color:#EBEBE4;"
+						 formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
+						 (keyup)="onKey($event)"/>
+						<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+							<div *ngIf="f.email.errors.required">Email is required</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password">Password <b style="color :red">*</b></label>
+						<input type="password" placeholder="Enter password" style=" border-radius : 5px; background-color:#EBEBE4;"
+						 formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+						 (keyup)="onKey($event)" />
+						<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+							<div *ngIf="f.password.errors.required">Password is required</div>
+							
+						</div>
+						<div *ngIf="shouldShowErrorMsg" id = "error">{{ errorMessage }}</div>
+						</div>
+						<div class="forms_buttons">
+							<button type="button" class="forms_buttons-forgot" (click)="openModal(template)">Forgot password ?</button>
+							
+ 
+							<ng-template #template>
+							  <div class="modal-header">
+								<h4 class="modal-title pull-left">Reset Password</h4>
+								<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+							  </div>
+							  <div class="modal-body">
+								<h6>Enter your email we will send you instructions to reset your password</h6>
+								<br/>
+								<div class="form-group form-row text-center">
+									<label for="forget_email">Email <b style="color :red"></b></label>
+									<input type="email" placeholder="Enter email" style=" border-radius : 5px; background-color:#EBEBE4;"
+									 formControlName="forget_email" class="form-control"
+									 (keyup)="onKey($event)"/>
+									 
+								
+								</div>
+
+							<div class="form-row text-center">
+									<div class="col-12">
+										<button type="submit"  style = " width:50%; background-color: #007bff; border-color: #007bff;" class="btn btn-primary" (click)="SendInst();">Send Instructions</button>
+										
+									</div>
+								 </div>
+
+							  </div>
+							</ng-template>
+						
+							<div><button class="forms_buttons-action" type="submit">Login</button></div>
+
+						</div>
+						
+			
+				</form>
+
+			</div>
+
+
+
+		</div>
+</div>
+</section>

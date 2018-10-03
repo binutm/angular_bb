@@ -1,0 +1,70 @@
+.card {
+	width: 790px;
+	height: 500px;
+	background-color: white;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.srcdest-container {
+	overflow-y: scroll;
+}
+
+.search {
+	border: 0px;
+}
+
+.search:focus {
+	outline: none;
+}
+
+.gray {
+	color: gray;
+}
+
+.selected {
+	border-color: #6750cc !important; 
+}
+
+.srcdest {
+	width: 120px;
+	height: 120px;
+	cursor: pointer;
+}
+
+.srcdest-icons {
+	width: 50px;
+	height: 50px;
+}
+
+.srcdest-name {
+	font-size: 12px;
+	font-weight: 500;
+	color: gray;
+}
+
+.selected-backdrop {
+	position: absolute;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.close {
+	color: white;
+	opacity: 0.8;
+	float: none;
+}
+
+.selected-icon {
+	height: 150px;
+}
+
+.selected-name {
+	color: white;
+}
+
+.btn-selected {
+	width: 200px !important;
+}

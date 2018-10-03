@@ -1,0 +1,13 @@
+
+<uapi-connections-search *ngIf="sourcesList && !validatedSource" [srcdestList]=sourcesList [categories]=srcCategories (onListChange)=updateList($event)></uapi-connections-search>
+<uapi-connections-search *ngIf="destinationsList && validatedSource" [srcdestList]=destinationsList [categories]=destCategories (onListChange)=updateList($event)></uapi-connections-search>
+<uapi-connections-list *ngIf="!validatedSource" [srcdestList]=list (onSelected)="onSelectedSource($event)"></uapi-connections-list>
+<uapi-connections-list *ngIf="validatedSource" [srcdestList]=list (onSelected)="onSelectedDestination($event)"></uapi-connections-list>
+
+<uapi-backdrop *ngIf="selectedSource && !validatedSource">
+	<uapi-connections-source-validator [selectedSource]=selectedSource (onValidatedSource)="onValidatedSource($event)" (onClose)="onCloseSource($event)"></uapi-connections-source-validator>
+</uapi-backdrop>
+
+<uapi-backdrop *ngIf="selectedDestination && !validatedDestination">
+	<uapi-connections-destination-validator [selectedDestination]=selectedDestination (onValidatedDestination)="onValidatedDestination($event)" (onClose)="onCloseDestination($event)"></uapi-connections-destination-validator>
+</uapi-backdrop>

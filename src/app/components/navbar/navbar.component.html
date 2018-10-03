@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+	<a class="nav-link" href="#section1"><img src="../../../assets/AptusUAPILogo.png"  style = "cursor: pointer;"  width="142" height="53" alt=""></a>
+
+  <button class="navbar-toggler" type="button"
+          (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id = section
+       [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto nav navbar-nav navbar-right">
+		
+      <li class="nav-item" id = "afterlogin" *ngIf= "isUserLoggedIn ; else loggedOut">
+				<!--<a class="nav-link" >Menu 1</a>
+				<a class="nav-link" style = "position: absolute; left:18%; top: 20%;" >Menu 2</a>
+				<a class="nav-link" style = "position: absolute; left:28%; top: 20%;" >Menu 3</a>
+				<a class="nav-link" [routerLink]="['/dashboard']">Integrations</a>-->
+				<a class="nav-link" [routerLink]="['/dashboard']">Home</a>
+				<a class="nav-link"  style = "position: absolute; left:19%; top: 25%;"[routerLink]="['/datasources']">Datasources</a>
+		 
+        
+			 
+				<div ngbDropdown class="d-inline-block" id = "drop" style = "position: absolute; left:86%; top: 15%;">
+				<button class="btn btn-login btn-default" id="dropdownBasic1" ngbDropdownToggle>
+				<img style="width:38px;" class="rounded-circle" src="../../../assets/user.png">&nbsp;
+				<span style = "color: black;">{{ name }}</span>
+				</button>
+				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				    <button class="dropdown-item" [routerLink]="['/profile']">Profile</button>
+					 <button (click)="logout()" class="dropdown-item">Logout</button>
+				</div>
+		 </div>
+		</li>
+	
+
+		<ng-template #loggedOut>
+                 <li class="nav-item">
+						<a class="nav-link" href="#section2">Datasources</a>
+				 </li>
+				 &nbsp;	
+				 <li class="nav-item">
+						<a class="nav-link" href="#section3">Pricing</a>
+				 </li>
+				 &nbsp;	
+				 <li class="nav-item">
+						<a class="nav-link" href="#section4">Contact Us</a>
+				 </li>
+				 &nbsp;	
+			 <li class="nav-item">
+					<a class="nav-link" [routerLink]="['/login']">Login</a>
+			 </li>
+	
+			 <li class="nav-item">
+					<a class="nav-link" [routerLink]="['/signup']">Signup</a>
+			 </li>
+		</ng-template>
+
+
+    </ul>
+  </div>
+</nav>

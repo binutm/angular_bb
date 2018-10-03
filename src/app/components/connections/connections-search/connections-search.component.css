@@ -1,0 +1,13 @@
+.search {
+	border: 0px;
+}
+
+.search:focus {
+	outline: none;
+}
+
+.button {
+	background-color: #7E57C2;
+	color: white;
+	width: 150px;
+}

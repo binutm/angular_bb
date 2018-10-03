@@ -1,0 +1,54 @@
+
+<mat-drawer class="drawer" mode="side" opened="true">
+  <div>
+      <!--<div class="border-bottom pl-4 d-flex">
+          <div (click)="loadData();">
+          <i class="fa fa-refresh"  style="color:#9370DB"></i>
+           </div>
+           </div>-->
+    <div class="border-bottom pl-4 d-flex">
+      <!--<img class="icon my-3" src="../../../assets/created.png">-->
+      <i class="fa fa-upload fa-2x text-primary" aria-hidden="true"></i>
+
+      <div class="ml-auto mr-2 mt-3">
+        <div class="value">{{ dataSourceCreated }}</div>
+  
+        <div class="heading my-2">Datasources Created</div>
+
+      </div>
+    </div>
+    <div class="border-bottom pl-4 d-flex">
+      <!--<img class="icon my-3" src="../../../assets/scheduled.png">-->
+      <i class="fa fa-clock-o fa-2x text-primary" aria-hidden="true"></i>   
+      <div class="ml-auto mr-2 mt-3">
+        <div class="value">{{ dataSourceScheduled }}</div>
+        <div class="heading my-2">Datasources Scheduled</div>
+      </div>
+    </div>
+    <div class="border-bottom pl-4 d-flex">
+      <!--<img class="icon my-3" src="../../../assets/downloaded.png">-->
+      <i class="fa fa-download fa-2x text-primary" aria-hidden="true"></i> 
+      <div class="ml-auto mr-2 mt-3">
+        <div class="value">{{ filesDownloaded }}</div>
+        <div class="heading my-2">Files Downloaded</div>
+      </div>
+    </div>
+    <div class="border-bottom pl-4 d-flex">
+      <!--<img class="icon my-3" src="../../../assets/rows.png">-->
+      <i class="fa fa fa-pie-chart fa-2x text-primary" aria-hidden="true"></i> 
+      
+      <div class="ml-auto mr-2 mt-3">
+        <div class="value">{{ rowsFetched }}</div>
+        <div class="heading my-2">Rows Fetched</div>
+      </div>
+    </div>
+  </div>
+  <div class="border-bottom pb-2" style="display: block">
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"></canvas>
+    <div class="text-center">Sources</div>
+  </div>
+  <div class="border-bottom mt-2 pb-2 mb-5" style="display: block">
+    <canvas baseChart [data]="doughnutChartData1" [labels]="doughnutChartLabels1" [chartType]="doughnutChartType1" (chartHover)="chartHovered1($event)"></canvas>
+    <div class="text-center">Destinations</div>
+  </div>
+</mat-drawer>

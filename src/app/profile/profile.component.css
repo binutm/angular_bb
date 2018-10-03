@@ -1,0 +1,75 @@
+html,body {
+	margin: 0;
+	padding: 0;
+  }
+  html {
+	overflow: hidden;
+  }
+
+body {
+	position: absolute;
+  top: 4px;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+/*******************************
+* ACCORDION WITH TOGGLE ICONS
+* Does not work properly if "in" is added after "collapse".
+******************************
+.panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: white;
+    background-color:#228B22;
+    border-color: #EEEEEE;
+}
+
+.panel-title {
+    font-size: 14px;
+}
+
+.panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.more-less {
+    float: right;
+    color: #212121;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #EEEEEE;
+}
+
+form {
+    width: 300px;
+    
+  }
+  .reg_name {
+    max-width:200px;
+}
+  */
+
+  .row {
+    margin:15px 0;
+  }
+  label {
+    margin-bottom: 5;
+    margin-left: 15px;
+    margin-right: 20px;
+}
+  
+
+input {
+    margin: .4rem;
+}

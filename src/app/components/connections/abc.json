@@ -1,0 +1,447 @@
+{
+	"status": "200",
+	"data": {
+		"_id": "bla",
+		"_etag": {
+			"$oid": "5b11582a472528518236f11a"
+		},
+		"srcdestId": [
+			{
+				"sourceName": "facebook",
+				"destName": "mysql",
+				"connectionId": "bla_facebook_mysql_1527849940013",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"albums"
+						]
+					}
+				]
+			},
+			{
+				"sourceName": "facebook",
+				"destName": "mysql",
+				"connectionId": "bla_facebook_mysql_1527850195438",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"albums"
+						]
+					}
+				]
+			},
+			{
+				"sourceName": "facebook",
+				"destName": "mysql",
+				"connectionId": "bla_facebook_mysql_1527850366878",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"feed"
+						]
+					}
+				]
+			},
+			{
+				"sourceName": "facebook",
+				"destName": "mysql",
+				"connectionId": "bla_facebook_mysql_1527852181911",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"feed",
+							"albums"
+						]
+					}
+				]
+			},
+			{
+				"sourceName": "facebook",
+				"destName": "xml",
+				"connectionId": "bla_facebook_xml_1527863177460",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"albums",
+							"likes"
+						]
+					}
+				]
+			},
+			{
+				"sourceName": "facebook",
+				"destName": "json",
+				"connectionId": "bla_facebook_json_1527863343182",
+				"scheduled": "false",
+				"period": "1800",
+				"endPoints": [
+					{
+						"key": "others",
+						"value": [
+							"albums",
+							"likes"
+						]
+					}
+				]
+			}
+		]
+	},
+	"images": {
+		"_id": "srcdestlist",
+		"_etag": {
+			"$oid": "5b11542e472528518236f116"
+		},
+		"destCategories": [
+			"Cloud",
+			"Files",
+			"SQL",
+			"NoSQL",
+			"Others"
+		],
+		"destinations": [
+			{
+				"id": "amazonredshift",
+				"name": "Amazon Redshift",
+				"logo": "https://i.imgur.com/hpv47f0.png",
+				"categories": [
+					"Cloud"
+				]
+			},
+			{
+				"id": "amazons3",
+				"name": "AmazonS3",
+				"logo": "https://i.imgur.com/NJu1WQr.png",
+				"categories": [
+					"Cloud"
+				]
+			},
+			{
+				"id": "bigquery",
+				"name": "BigQuery",
+				"logo": "https://i.imgur.com/1TbhGz7.png",
+				"categories": [
+					"Cloud"
+				]
+			},
+			{
+				"id": "csv",
+				"name": "CSV",
+				"logo": "https://i.imgur.com/iVQFwwN.png",
+				"categories": [
+					"Files"
+				]
+			},
+			{
+				"id": "dynamodb",
+				"name": "DynamoDB",
+				"logo": "https://i.imgur.com/VSHDGct.png",
+				"categories": [
+					"Cloud"
+				]
+			},
+			{
+				"id": "json",
+				"name": "JSON",
+				"logo": "https://i.imgur.com/qVWpoIE.png",
+				"categories": [
+					"Files"
+				]
+			},
+			{
+				"id": "mongodb",
+				"name": "MongoDB",
+				"logo": "https://i.imgur.com/yTinnKB.png",
+				"categories": [
+					"NoSQL"
+				]
+			},
+			{
+				"id": "mysql",
+				"name": "MySQL",
+				"logo": "https://i.imgur.com/PpY0eWq.png",
+				"categories": [
+					"SQL"
+				]
+			},
+			{
+				"id": "oracle",
+				"name": "Oracle",
+				"logo": "https://i.imgur.com/H2mJ48o.png",
+				"categories": [
+					"SQL"
+				]
+			},
+			{
+				"id": "postgresql",
+				"name": "PostgreSQL",
+				"logo": "https://i.imgur.com/HVrCqBy.png",
+				"categories": [
+					"SQL"
+				]
+			},
+			{
+				"id": "sqlserver",
+				"name": "SQL Server",
+				"logo": "https://i.imgur.com/ZrMDfeQ.png",
+				"categories": [
+					"SQL"
+				]
+			},
+			{
+				"id": "xml",
+				"name": "XML",
+				"logo": "https://i.imgur.com/vtxfhM4.png",
+				"categories": [
+					"Files"
+				]
+			}
+		],
+		"sources": [
+			{
+				"id": "braintree",
+				"name": "Braintree",
+				"logo": "https://i.imgur.com/J3CoiCA.png",
+				"categories": [
+					"Others"
+				]
+			},
+			{
+				"id": "dropbox",
+				"name": "Dropbox",
+				"logo": "https://i.imgur.com/s474Aot.png",
+				"categories": [
+					"Storage"
+				]
+			},
+			{
+				"id": "facebook",
+				"name": "Facebook",
+				"logo": "https://i.imgur.com/pZZGNJT.png",
+				"categories": [
+					"Social"
+				]
+			},
+			{
+				"id": "contacts",
+				"name": "Google Contacts",
+				"logo": "https://i.imgur.com/eGO9UtL.png",
+				"categories": [
+					"Social"
+				]
+			},
+			{
+				"id": "evernote",
+				"name": "Evernote",
+				"logo": "https://i.imgur.com/7GLJ3Fb.png",
+				"categories": [
+					"Storage"
+				]
+			},
+			{
+				"id": "gitlab",
+				"name": "Gitlab",
+				"logo": "https://i.imgur.com/Ol0idQ7.png",
+				"categories": [
+					"Project Management"
+				]
+			},
+			{
+				"id": "gmail",
+				"name": "Gmail",
+				"logo": "https://i.imgur.com/KsvSMH5.png",
+				"categories": [
+					"Mail"
+				]
+			},
+			{
+				"id": "instagram",
+				"name": "Instagram",
+				"logo": "https://i.imgur.com/n0l0COL.png",
+				"categories": [
+					"Social"
+				]
+			},
+			{
+				"id": "intercom",
+				"name": "Intercom",
+				"logo": "https://i.imgur.com/pXHhECB.png",
+				"categories": [
+					"Streaming"
+				]
+			},
+			{
+				"id": "jira",
+				"name": "Jira",
+				"logo": "https://i.imgur.com/NbdHSeN.png",
+				"categories": [
+					"Project Management"
+				]
+			},
+			{
+				"id": "linkedin",
+				"name": "LinkedIn",
+				"logo": "https://i.imgur.com/KZyCwyZ.png",
+				"categories": [
+					"Networking"
+				]
+			},
+			{
+				"id": "mandrill",
+				"name": "Mandrill",
+				"logo": "https://i.imgur.com/nwUgCbF.png",
+				"categories": [
+					"Mail"
+				]
+			},
+			{
+				"id": "mailchimp",
+				"name": "Mailchimp",
+				"logo": "https://i.imgur.com/XwOk6KR.png",
+				"categories": [
+					"Mail"
+				]
+			},
+			{
+				"id": "mixpanel",
+				"name": "Mixpanel",
+				"logo": "https://i.imgur.com/ti9ciRs.png",
+				"categories": [
+					"Analytics"
+				]
+			},
+			{
+				"id": "pipedrive",
+				"name": "Pipedrive",
+				"logo": "https://i.imgur.com/TCnfyRX.png",
+				"categories": [
+					"CRM"
+				]
+			},
+			{
+				"id": "pivotaltracker",
+				"name": "Pivotal Tracker",
+				"logo": "https://i.imgur.com/zQGI7Cx.png",
+				"categories": [
+					"Project Management"
+				]
+			},
+			{
+				"id": "quickbooks",
+				"name": "QuickBooks",
+				"logo": "https://i.imgur.com/TJCxXRE.png",
+				"categories": [
+					"Accounting"
+				]
+			},
+			{
+				"id": "salesforce",
+				"name": "Salesforce",
+				"logo": "https://i.imgur.com/WfTrZzN.png",
+				"categories": [
+					"CRM"
+				]
+			},
+			{
+				"id": "shopify",
+				"name": "Shopify",
+				"logo": "https://i.imgur.com/jtju9ZX.png",
+				"categories": [
+					"E-Commerce"
+				]
+			},
+			{
+				"id": "slack",
+				"name": "Slack",
+				"logo": "https://i.imgur.com/3BawMQJ.png",
+				"categories": [
+					"Networking"
+				]
+			},
+			{
+				"id": "surveymonkey",
+				"name": "Survey Monkey",
+				"logo": "https://i.imgur.com/YnRDTXo.png",
+				"categories": [
+					"Survey"
+				]
+			},
+			{
+				"id": "trello",
+				"name": "Trello",
+				"logo": "https://i.imgur.com/VnRt830.png",
+				"categories": [
+					"Project Management"
+				]
+			},
+			{
+				"id": "twitter",
+				"name": "Twitter",
+				"logo": "https://i.imgur.com/Tr0BOKR.png",
+				"categories": [
+					"Social"
+				]
+			},
+			{
+				"id": "wordpress",
+				"name": "Wordpress",
+				"logo": "https://i.imgur.com/RCLM7jd.png",
+				"categories": [
+					"E-Commerce"
+				]
+			},
+			{
+				"id": "youtube",
+				"name": "Youtube",
+				"logo": "https://i.imgur.com/kGiJIw9.png",
+				"categories": [
+					"Streaming"
+				]
+			},
+			{
+				"id": "zohocrm",
+				"name": "ZohoCRM",
+				"logo": "https://i.imgur.com/PrSO63Y.png",
+				"categories": [
+					"CRM"
+				]
+			},
+			{
+				"id": "zohohelpdesk",
+				"name": "Zoho Help Desk",
+				"logo": "https://i.imgur.com/fekwMyc.png",
+				"categories": [
+					"Social"
+				]
+			}
+		],
+		"srcCategories": [
+			"Accounting",
+			"Analytics",
+			"CRM",
+			"E-Commerce",
+			"Mail",
+			"Networking",
+			"Social",
+			"Storage",
+			"Streaming",
+			"Survey",
+			"Project Management",
+			"Others"
+		]
+	}
+}

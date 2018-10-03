@@ -1,0 +1,36 @@
+.endpoints-form-check {
+	width: 30%;
+}
+
+.heading {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.filterendpoints {
+	height: 250px;
+	overflow-y: auto;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+}
+
+.form-check-inline {
+	margin-right: 0px;
+}
+
+.loader-container{
+	height: 250px;
+}
+
+.card {
+	width: 200px;
+	padding: 4px;
+	background-color: white;
+	cursor: pointer;
+}
+
+.selected {
+	background-color: #7E57C2;
+	color: white;
+}

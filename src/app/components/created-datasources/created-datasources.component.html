@@ -1,0 +1,143 @@
+<uapi-navbar></uapi-navbar>
+
+
+<!-- <app-dashboard></app-dashboard> -->
+<uapi-stats></uapi-stats>
+<mat-drawer-container class="example-container">
+
+	
+	<mat-drawer-content class="border datasource">
+
+		<div *ngIf="status == 200" class="alert-success py-2 pl-4" role="alert">
+			Datasource created successfully.
+		</div>
+
+		<div *ngIf="exportSuccess" class="alert-success py-2 pl-4" role="alert">
+			Exported Successfully!
+		</div>
+
+
+		<div *ngIf="connStatus == 11" class="alert-success py-2 pl-4" role="alert">
+			You need to validate Source again.
+		</div>
+
+		<div *ngIf="connStatus == 12" class="alert-success py-2 pl-4" role="alert">
+			You need to validate Destination again.
+		</div>
+
+		<div *ngIf="connStatus == 13" class="alert-success py-2 pl-4" role="alert">
+			You need to validate again.
+		</div>
+
+
+
+
+		<div class="bg d-flex p-2">
+
+			<mat-accordion class="mx-auto mt-5 w-75" *ngIf="data">
+
+
+				<div *ngIf="status == 404">Error Occured! Datasource creation unsuccessful.</div>
+				<mat-expansion-panel *ngFor="let connection of (data.data.srcdestId).reverse()">
+
+					<mat-expansion-panel-header>
+						<div class="mx-auto">
+							<div class="text-center" *ngFor="let source of data.images.sources">
+								<img class="icon" *ngIf="connection.sourceName == source.id" src="{{source.logo}}">
+								<div *ngIf="connection.sourceName == source.id">{{source.name}}</div>
+							</div>
+						</div>
+
+
+						<div class="mx-auto">
+							<div class="text-center" *ngFor="let destinations of data.images.destinations">
+								<img class="icon" *ngIf="connection.destName == destinations.id" src="{{destinations.logo}}">
+								<div *ngIf="connection.destName == destinations.id">{{destinations.name}}</div>
+							</div>
+						</div>
+
+
+					</mat-expansion-panel-header>
+
+					<div>Connection ID: {{connection.connectionId}}</div>
+					<div>Is Scheduled?
+						<span *ngIf="connection.scheduled == 'true'" class="ml-5">Yes</span>
+						<span *ngIf="connection.scheduled == 'false'" class="ml-5">No</span>
+					</div>
+					<div *ngIf="connection.scheduled == 'true'">Schedule Period:
+						<span class="ml-5">{{connection.period/(60*60*1000)}} hours</span>
+					</div>
+
+
+					<div class="d-flex">
+						<button type="button" class="btn btn-light d-block m-2 btn-selected" (click)="view(connection.connectionId)">View</button>
+
+						<button *ngIf="connection.scheduled == 'false' && !(connection.destName == 'csv' || connection.destName == 'json' || connection.destName == 'xml')"
+						 type="button" class="btn btn-light d-block m-2 btn-selected" (click)="export(connection.connectionId)">Export</button>
+
+						<button *ngIf="connection.scheduled == 'true' && !(connection.destName == 'csv' || connection.destName == 'json' || connection.destName == 'xml')"
+						 type="button" class="btn btn-light d-block m-2 btn-selected" disabled (click)="export(connection.connectionId)">Export</button>
+
+
+						<div *ngIf="(connection.destName == 'csv' || connection.destName == 'json' || connection.destName == 'xml')" ngbDropdown
+						 class="d-inline-block">
+							<button class="btn btn-light d-block m-2 btn-selected" id="dropdownBasic1" ngbDropdownToggle>Download</button>
+							<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+								<div *ngFor="let element of connection.endPoints">
+									<a *ngFor="let link of element.value" class="dropdown-item" href="{{baseurl}}/downloadData?connId={{connection.connectionId}}&choice={{connection.destName}}&endpoint={{link}}">{{link}}</a>
+								</div>
+							</div>
+						</div>
+						<!--<button type="button" class="btn btn-light d-block m-2 btn-selected">Edit</button>-->
+						<button type="button" class="btn btn-light d-block m-2 btn-selected btn-delete" (click)="delete(connection.connectionId)">Delete</button>
+					</div>
+
+				</mat-expansion-panel>
+
+			</mat-accordion>
+		</div>
+
+	</mat-drawer-content>
+</mat-drawer-container>
+
+<uapi-backdrop *ngIf="viewData && endpointsData">
+	<br/>
+	<button type="button" class="close p-3" aria-label="Close" (click)="close()">
+		<i class="material-icons">close</i>
+	</button>
+	<div class="d-flex">
+		<div class="p-3 card d-flex mx-auto">
+			<mat-drawer-container class="example-container">
+				<mat-drawer class="w-25" mode="side" opened="true">
+					<div class="text-center font-weight-bold">Selected Endpoints</div>
+					<ul class="mx-auto list-group w-75">
+						<li *ngFor="let endpoint of endpoints; let i = index" class="list-group-item" (click)="endpointChanged(i)" [class.selected]="selectedEndpoint == i">{{endpoint}}</li>
+					</ul>
+				</mat-drawer>
+				<br/><br/><br/>
+				<mat-drawer-content class="border p-2">
+					<div *ngFor="let endpoint of endpoints; let i = index">
+						<table class="table table-bordered" *ngIf="selectedEndpoint == i">
+
+							<div class="table-container" style = "background-color: white;">
+							<thead>
+								<tr>
+									<th class="text-center" *ngFor="let endpointColumn of endpointsData[i].data.columns">{{endpointColumn}}</th>
+								</tr>
+								</thead>
+								<tbody>
+
+								<tr *ngFor="let row of endpointsData[i].data.data">
+									<td class="text-center" *ngFor="let col of row">{{col}}</td>
+								</tr>
+								
+								</tbody>
+							</div>
+						</table>
+					</div>
+				</mat-drawer-content>
+			</mat-drawer-container>
+		</div>
+	</div>
+	
+</uapi-backdrop>

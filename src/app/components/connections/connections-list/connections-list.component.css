@@ -1,0 +1,29 @@
+.connections-list-container {
+	height: 285px;
+	overflow-y: scroll;
+}
+
+.srcdest {
+	width: 175px;
+	height: 135px;
+	cursor: pointer;
+}
+
+.icons {
+	width: 92px;
+	height:54px;
+}
+
+.name {
+	font-size: 12px;
+	font-weight: 500;
+	color: gray;
+}
+
+.selected {
+	border-color: #7E57C2 !important; 
+}
+
+.srcdest:hover {
+	border: 1px solid #7E57C2!important;
+}

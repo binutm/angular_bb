@@ -1,0 +1,100 @@
+mat-drawer-content {
+	background-color: #EEEEEE;
+}
+
+.btn-selected {	
+	width: 100px !important;
+	background-color:#7E57C2;
+	color: white;
+	border: 1px solid #7E57C2;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.btn-delete {
+	background-color:#d32f2f;
+	border: 0;
+}
+
+.card {
+	position: relative;
+	height: 515px;
+	background-color: white;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.table-container {
+	height: 465px;
+	width: 800px;
+	overflow: scroll;
+}
+
+.table tbody {
+	overflow: scroll;
+}
+
+.close {
+	float: none;
+	color: white;
+	opacity: 1;
+	background-color: #7E57C2;
+}
+
+.mat-drawer-content {
+	overflow: hidden;
+}
+
+.selected {
+	background-color: #7E57C2;
+	color: white;
+}
+
+.icon {	
+	width: 46px;
+	height:27px;
+}
+
+mat-expansion-panel-header {
+	height: 80px!important;
+}
+
+.icon-sidenav {
+	height: 35px;
+	width: 35px;
+}
+
+.value {
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 24px;
+	text-align: right;
+}
+
+.heading {
+	width: 145px;
+	text-align: right;
+	font-size: 14px;
+}
+
+.example-container {
+	left:10%;
+	height: 100vh;
+}
+
+.datasource {
+	height: 92vh;
+	overflow: scroll!important;
+}
+
+.alert-success {
+	color: black;
+	font-weight: 500;
+}
+.table-bordered td, .table-bordered th {
+    border: 2px solid rgba(0,0,0,.87);
+}
+
+ .p-3{
+	float: right;
+	
+}

@@ -1,0 +1,24 @@
+<div class="d-flex w-100 border-bottom">
+	<div class="ml-5 my-auto heading">Select Endpoints to push into destination.</div>
+	<button type="button" class="close p-3 ml-auto btn-next" (click)="next()">
+		<i class="material-icons">arrow_forward</i>
+	</button>
+</div>
+<div *ngIf="!endpoints" class="d-flex loader-container">
+	<div class="mx-auto my-auto">
+		<div class="loader"></div>
+	</div>
+</div>
+<ul class="filterendpoints">
+	<li *ngFor="let category of endpoints" class="form-check form-check-inline w-100">
+		<ul>
+			<li *ngFor="let value of category.value" class="endpoints-form-check form-check form-check-inline">
+				<div class="card text-center shadow-sm my-1 mr-2" [class.selected]="options[category.name][value]" (click)="options[category.name][value] = !options[category.name][value]">
+					<div>{{value}}</div>
+				</div>
+				<!--<input class="form-check-input" type="checkbox" id="{{value}}" [(ngModel)]=">
+				<label class="form-check-label" for="{{value}}">{{value}}</label> -->
+			</li>
+		</ul>
+	</li>
+</ul>

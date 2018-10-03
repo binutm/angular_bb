@@ -1,0 +1,7 @@
+<uapi-connections-stepper [step]=step (onStepChanged)="changeStep($event)"></uapi-connections-stepper>
+
+<div class="card">
+	<uapi-connections-selector *ngIf="!srcdestValidated" (onValidated)="validated($event)" (onSourceValidated)="sourceValidated($event)" (onListUpdated)="listUpadted($event)"></uapi-connections-selector>
+	<uapi-connections-filter-endpoints *ngIf="srcdestValidated && !filteredEndpoints" (onSelectedFilteredEndpoints)="selectedFilteredEndpoints($event)"></uapi-connections-filter-endpoints>
+	<uapi-connections-scheduler *ngIf="srcdestValidated && filteredEndpoints && !scheduler" [filteredEndpoints]=selectedEndpoints [selected]=selectedSrcdest></uapi-connections-scheduler>
+</div>

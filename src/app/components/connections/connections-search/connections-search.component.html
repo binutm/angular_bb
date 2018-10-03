@@ -1,0 +1,19 @@
+<div class="border-bottom d-flex p-2">
+	<div class="my-auto pr-2">
+		<i class="material-icons align-text-top gray">search</i>
+	</div>
+	<div class="my-auto w-100">
+		<input #search class="search mx-auto w-100 p-1" type="text" (keyup)=onSearch(search.value) placeholder="Search" onfocus="this.placeholder = ''"
+		 onblur="this.placeholder = 'Search'" [(ngModel)]="searchValue">
+	</div>
+	<div>
+
+		<div ngbDropdown class="d-inline-block">
+			<button class="btn button shadow-sm" id="dropdownBasic1" ngbDropdownToggle>{{selectedCategory}}</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				<button (click)="onCategorySelected('All')" class="dropdown-item">All</button>
+				<button *ngFor="let category of categories" (click)="onCategorySelected(category)" class="dropdown-item">{{category}}</button>
+			</div>
+		</div>
+	</div>
+</div>

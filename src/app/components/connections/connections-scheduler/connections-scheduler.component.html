@@ -1,0 +1,113 @@
+<div class="d-flex h-75">
+	<div class="mx-auto "  >
+		<img class="icon mt-5" src="{{selected.selectedSource.logo}}">
+		<div class="text-center">{{selected.selectedSource.name}}</div>
+	</div>
+	<div id="arrowAnim">
+			<div class="arrowSliding">
+			  <div class="arrow"></div>
+			</div>
+			<div class="arrowSliding delay1">
+			  <div class="arrow"></div>
+			</div>
+			<div class="arrowSliding delay2">
+			  <div class="arrow"></div>
+			</div>
+			<div class="arrowSliding delay3">
+			  <div class="arrow"></div>
+			</div>
+		  </div>
+	<div class="mx-auto">
+		<img class="icon mt-5" src="{{selected.selectedDestination.logo}}">
+		<div class="text-center">{{selected.selectedDestination.name}}</div>
+	</div>
+</div>
+<div id="main">
+	
+	
+		<div id="d1">
+		<div class="d-flex text-center mt-5">
+						<!--<label class="radio-inline">
+								<input type="radio" name="optionsRadios" id="optionsRadios2">
+								</label>-->
+								<button type="button" id = "push" class="btn btn-warning" (click)="disabled = !disabled">
+									<i class="fa fa-check" aria-hidden="true"></i>
+									</button>
+									&nbsp;
+									<div class="btn-group" dropdown [isDisabled]="disabled" *ngIf="!(selected.selectedDestination._id == 'json' || selected.selectedDestination._id == 'xml' || selected.selectedDestination._id == 'csv')">
+											<button id="button-disabled-menu" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+															aria-controls="dropdown-disabled-menu" (click)=schedulerSwitch()>
+															Do you want to schedule? <span class="caret"></span>
+											</button>
+								        </div>
+										<select i *ngIf="scheduler" class="form-control w-25 d-inline-block" id = "dropdown" (change)="onSelectChange($event.target.value)">
+												<option value="{{30 * 60}}">30 mins</option>
+												<option value="{{1 * 60 * 60}}">1 hour</option>
+												<option value="{{3 * 60 * 60}}">3 hours</option>
+												<option value="{{5 * 60 * 60}}">5 hours</option>
+											</select>
+						<!--<button  id = "one" *ngIf="!(selected.selectedDestination._id == 'json' || selected.selectedDestination._id == 'xml' || selected.selectedDestination._id == 'csv')"
+						 class="btn btn-primary" (click)=schedulerSwitch()>Do you want to schedule?</button>
+						<select i *ngIf="scheduler" class="form-control w-25 d-inline-block" id = "dropdown" (change)="onSelectChange($event.target.value)">
+							<option value="{{30 * 60}}">30 mins</option>
+							<option value="{{1 * 60 * 60}}">1 hour</option>
+							<option value="{{3 * 60 * 60}}">3 hours</option>
+							<option value="{{5 * 60 * 60}}">5 hours</option>
+						</select>-->
+					</div>
+
+		</div>
+		<div id="d2">
+				<div class="d-flex text-center mt-5">
+
+						<button *ngIf="!(selected.selectedDestination._id == 'json' || selected.selectedDestination._id == 'xml' || selected.selectedDestination._id == 'csv')"
+						 class="btn button mx-auto" (click)="createDatasource()">Export</button>
+						<button *ngIf="selected.selectedDestination._id == 'json' || selected.selectedDestination._id == 'xml' || selected.selectedDestination._id == 'csv'"
+						 class="btn button mx-auto" (click)="downloadDatasource(selected.selectedDestination._id)">Download</button>
+					</div>
+		</div>
+		<!--<div class="btn-group" dropdown [isDisabled]="disabled">
+				<button id="button-disabled-menu" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+								aria-controls="dropdown-disabled-menu">
+					Button dropdown <span class="caret"></span>
+				</button>
+				<ul id="dropdown-disabled-menu" *dropdownMenu class="dropdown-menu"
+						role="menu" aria-labelledby="button-disabled-menu">
+					<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+					<li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+					</li>
+					<li role="menuitem"><a class="dropdown-item" href="#">Something else
+						here</a></li>
+					<li class="divider dropdown-divider"></li>
+					<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+					</li>
+				</ul>
+			</div>-->
+			
+	</div>
+
+
+<div *ngIf="loaderShow" class="loader-small mx-auto mt-2"></div>
+
+
+<uapi-backdrop *ngIf="loader">
+	<div class="d-flex">
+		<div class="loader mx-auto" style="margin-top: 120px;"></div>
+	</div>
+</uapi-backdrop>
+
+<uapi-backdrop *ngIf="download">
+
+	<button type="button" class="close p-3" aria-label="Close" (click)="closeDownload()">
+		<i class="material-icons">arrow_back</i>
+	</button>
+	<span class="ml-4 heading">Select Filter Endpoint</span>
+	<div *ngIf="downloadData">
+		<div class="d-flex" *ngFor="let x of downloadData">
+			<div class="mx-auto d-block">
+				<a class="d-block btn" href= "{{baseurl}}/downloadData?connId={{currentConnId}}&&choice={{destination}}&endpoint={{x}}">{{x}}</a>
+			</div>
+		</div>
+	</div>
+</uapi-backdrop>
+

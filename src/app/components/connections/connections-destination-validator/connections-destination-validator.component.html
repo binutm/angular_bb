@@ -1,0 +1,31 @@
+<div *ngIf="!destinationForm">
+	<div class="d-flex">
+		<button type="button" class="close p-3" aria-label="Close" (click)="close()">
+			<i class="material-icons">arrow_back</i>
+		</button>
+		<button *ngIf="(isValid == true) || (selectedDestination._id == 'xml' || selectedDestination._id == 'csv' || selectedDestination._id == 'json')" type="button" class="close p-3 ml-auto btn-next" (click)="next()">
+			<i class="material-icons">arrow_forward</i>
+		</button>
+	</div>
+	<div class="d-flex">
+		<div class="d-flex mx-auto my-auto">
+			<div class="mr-5 text-center">
+				<img class="selected-icon" src="{{selectedDestination.logo}}">
+				<div class="selected-name mt-2">{{selectedDestination.name}}</div>
+			</div>
+			<div *ngIf="!(selectedDestination._id == 'xml' || selectedDestination._id == 'csv' || selectedDestination._id == 'json') " class="ml-5">
+				<button type="button" class="btn btn-light d-block m-2 btn-selected" (click)="authorize()">Authorize</button>
+				<button type="button" class="btn btn-light d-block m-2 btn-selected" (click)="validate()">
+					Validate
+					<span *ngIf="isValid == true" class="badge badge-success">
+						<i class="material-icons">check</i>
+					</span>
+					<span *ngIf="isValid == false" class="badge badge-danger">
+						<i class="material-icons">close</i>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<uapi-connections-destination-form *ngIf="destinationForm" [destId]=selectedDestination (onClose)="onCloseDestinationForm($event)"></uapi-connections-destination-form>

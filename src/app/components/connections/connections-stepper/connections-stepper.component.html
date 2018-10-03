@@ -1,0 +1,35 @@
+<div class="md-stepper-horizontal primary">
+	<div class="md-step" (click)="stepChanged(1);" [class.active]="step >= 1">
+		<div class="md-step-circle">
+			<span>1</span>
+		</div>
+		<div class="md-step-title">Select Source</div>
+		<div class="md-step-bar-left"></div>
+		<div class="md-step-bar-right"></div>
+	</div>
+	<div class="md-step" (click)="stepChanged(2);" [class.active]="step >= 2">
+		<div class="md-step-circle">
+			<span>2</span>
+		</div>
+		<div class="md-step-title">Select Destination</div>
+		<!-- <div class="md-step-optional">Optional</div> -->
+		<div class="md-step-bar-left"></div>
+		<div class="md-step-bar-right"></div>
+	</div>
+	<div class="md-step" (click)="stepChanged(3);" [class.active]="step >= 3">
+		<div class="md-step-circle">
+			<span>3</span>
+		</div>
+		<div class="md-step-title">Filter Endpoints</div>
+		<div class="md-step-bar-left"></div>
+		<div class="md-step-bar-right"></div>
+	</div>
+	<div class="md-step" (click)="stepChanged(4);" [class.active]="step >= 4">
+		<div class="md-step-circle">
+			<span>4</span>
+		</div>
+		<div class="md-step-title">Create Datasource</div>
+		<div class="md-step-bar-left"></div>
+		<div class="md-step-bar-right"></div>
+	</div>
+</div>

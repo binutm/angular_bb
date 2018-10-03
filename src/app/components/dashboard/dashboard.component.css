@@ -1,0 +1,36 @@
+.bg {
+	background-color: #EEEEEE;
+}
+
+.drawer {
+	width: 300px;
+}
+
+.icon {
+	height: 35px;
+	width: 35px;
+}
+
+.value {
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 24px;
+	text-align: right;
+}
+
+.heading {
+	width: 145px;
+	text-align: right;
+	font-size: 14px;
+}
+
+mat-drawer {
+	overflow: auto;
+	height: 95vh;
+}
+
+mat-drawer-content {
+	left:10%;
+	overflow: auto;
+	height: 100vh;
+}

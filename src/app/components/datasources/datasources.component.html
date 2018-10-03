@@ -1,0 +1,49 @@
+
+
+<div class="card">
+
+	<div class="border-bottom d-flex p-2">
+		<div class="my-auto pr-2">
+			<i class="material-icons align-text-top gray">search</i>
+		</div>
+		<div class="my-auto w-100">
+			<input class="search mx-auto w-100 p-1" type="text" placeholder="Search" onfocus="this.placeholder = ''"
+			onblur="this.placeholder = 'Search'">
+		</div>
+		<div>
+			<button type="button" class="btn btn-light">Categories: All</button>
+		</div>
+	</div>
+
+
+	<div class="srcdest-container">
+		<div class="d-inline-block srcdest border rounded m-1" *ngFor="let source of sources" [class.selected]="source == selectedSource"
+		 (click)="onSelect(source)">
+			<div class="d-flex">
+				<img class="srcdest-icons mx-auto mt-3 mb-4" src="{{source.logo}}">
+			</div>
+			<div class="d-flex">
+				<span class="m-auto srcdest-name">{{source.name}}</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div *ngIf="selectedSource" class="selected-backdrop">
+		<button type="button" class="close p-3" aria-label="Close" (click)="onClose()">
+			<i class="material-icons">arrow_back</i>
+		</button>
+		<div class="d-flex">
+			<div class="d-flex mx-auto my-auto">
+				<div class="mr-5 text-center">
+					<img class="selected-icon" src="{{selectedSource.logo}}">
+					<div class="selected-name mt-2">{{selectedSource.name}}</div>
+				</div>
+				<div class="ml-5">
+					<button type="button" class="btn btn-light d-block m-2 btn-selected">Validate</button>
+					<button type="button" class="btn btn-light d-block m-2 btn-selected">Authorize</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

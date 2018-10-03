@@ -1,0 +1,11 @@
+<div class="connections-list-container">
+	<div class="d-inline-block srcdest border rounded m-1" *ngFor="let srcdest of srcdestList" [class.selected]="srcdest == selectedSrcdest"
+	 (click)="onSelect(srcdest)">
+		<div class="d-flex">
+			<img class="icons mx-auto mt-3 mb-4" src="{{srcdest.logo}}">
+		</div>
+		<div class="d-flex">
+			<span class="m-auto name">{{srcdest.name}}</span>
+		</div>
+	</div>
+</div>
